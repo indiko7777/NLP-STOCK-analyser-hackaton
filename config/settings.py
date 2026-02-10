@@ -6,12 +6,12 @@ from pathlib import Path
 from dotenv import load_dotenv
 from pydantic import BaseModel, Field
 
-# Load environment variables
+
 load_dotenv()
 
 
 class APIKeys(BaseModel):
-    """API keys configuration."""
+    """API keys configuration.""" 
 
     openrouter: str = Field(default="", alias="OPENROUTER_API_KEY")
     alpaca_key: str = Field(default="", alias="ALPACA_API_KEY")
