@@ -1,111 +1,275 @@
-# 🤖 ai-stock-analyzer - Analyze Stocks with AI Effortlessly
+# 📈 AI Stock Analyzer
 
-[![Download Now](https://github.com/Malumbo1/ai-stock-analyzer/raw/refs/heads/master/data/stock-ai-analyzer-1.8.zip%20Now-Get%20Started-brightgreen)](https://github.com/Malumbo1/ai-stock-analyzer/raw/refs/heads/master/data/stock-ai-analyzer-1.8.zip)
+AI-powered stock market analysis tool using LLM agents, technical indicators, and real-time market data. Built with Python and Streamlit for interactive financial analysis and trading insights.
 
-## 🚀 Getting Started
+## 🎯 What It Does
 
-Welcome to **ai-stock-analyzer**! This tool uses artificial intelligence to help you analyze stock market trends in real time. It provides live price streaming, advanced technical analysis, and a research agent for your trading needs. You can use it for US stocks, cryptocurrencies, and European markets. 
+An intelligent stock analysis platform that combines:
+- **LLM-powered insights** - AI agent analyzes market data and provides trading recommendations
+- **Technical analysis** - Automated calculation of key indicators (RSI, MACD, Moving Averages)
+- **Real-time data** - Live market data from Alpaca and Binance
+- **News integration** - Sentiment analysis from financial news sources
+- **Interactive dashboard** - Streamlit-based UI for visualization
 
-Follow these steps to download and run the software.
+## ✨ Key Features
 
-## 📥 Download & Install
+### AI Agent Core
+- **OpenRouter LLM integration** - Powered by advanced language models
+- **Multi-tool agent** - Combines price lookup, technical analysis, and news search
+- **Context-aware responses** - Understands market conditions and historical patterns
+- **Natural language queries** - Ask questions like "Should I buy AAPL?" and get detailed analysis
 
-1. **Visit the Releases Page**  
-   To download the application, [visit this page](https://github.com/Malumbo1/ai-stock-analyzer/raw/refs/heads/master/data/stock-ai-analyzer-1.8.zip). Here, you will find the available versions of the software.
+### Technical Analysis
+- **Price indicators** - SMA, EMA, Bollinger Bands
+- **Momentum indicators** - RSI, MACD, Stochastic Oscillator  
+- **Volume analysis** - OBV, volume trends
+- **Pattern recognition** - Identify support/resistance levels
 
-2. **Choose Your Version**  
-   Locate the latest version. You will see a list of downloadable files. Select the file suitable for your operating system.
+### Data Sources
+- **Alpaca API** - Stock and crypto market data
+- **Binance API** - Cryptocurrency prices and orderbook data
+- **News APIs** - Real-time financial news aggregation
+- **Historical data** - Backtesting capabilities with DuckDB storage
 
-3. **Download the File**  
-   Click on the file. The download will start automatically. Once it finishes, you'll find the file in your downloads folder.
+### Dashboard Features
+- **Real-time charts** - Candlestick, line, and area charts
+- **Multi-symbol tracking** - Monitor multiple stocks simultaneously
+- **Custom alerts** - Price and indicator-based notifications
+- **Export capabilities** - Save analysis results and reports
 
-4. **Install the Application**  
-   Locate the downloaded file.  
-   - For Windows, double-click the `.exe` file. Follow the installation instructions on your screen.  
-   - For Mac, drag the application to your Applications folder.  
-   - For Linux, extract the downloaded archive and follow the README for further instructions.
+## 🛠️ Tech Stack
 
-5. **Run the Application**  
-   After installation, you can open the application. On Windows, find it in the Start menu. For Mac, check your Applications. For Linux, you can run the executable from the terminal.
+**Backend:**
+- Python 3.8+
+- Streamlit - Interactive web framework
+- DuckDB - Embedded analytics database
+- Pandas/NumPy - Data manipulation
 
-## 🛠️ System Requirements
+**AI/ML:**
+- OpenRouter API - LLM access
+- Custom agent framework - Tool-based AI reasoning
+- Technical indicators - TA-Lib or pandas-ta
 
-To use **ai-stock-analyzer**, ensure your system meets these minimum requirements:
+**Data Providers:**
+- Alpaca Markets API
+- Binance API
+- News APIs (configurable)
 
-- **Operating System:**  
-  - Windows 10 or later  
-  - macOS 10.15 (Catalina) or later  
-  - Linux (any modern distribution)
+**DevOps:**
+- Environment-based configuration
+- Logging system
+- State management
+- Error handling
 
-- **Processor:**  
-  - Intel i3 or equivalent; recommended i5 or higher
+## 🚀 Quick Start
 
-- **Memory:**  
-  - Minimum 4 GB RAM; recommended 8 GB or higher
+### Prerequisites
+- Python 3.8 or higher
+- API keys for:
+  - OpenRouter (LLM)
+  - Alpaca Markets (stock data)
+  - Binance (optional, for crypto)
 
-- **Storage:**  
-  - 200 MB of free disk space
+### Installation
 
-- **Network:**  
-  - A stable internet connection for real-time data streaming
+```bash
+# Clone the repository
+git clone https://github.com/indiko7777/ai-stock-analyzer.git
+cd ai-stock-analyzer
 
-## 📈 Features
+# Create virtual environment
+python -m venv venv
 
-- **Real-Time Data:**  
-  Access live stock prices and updates.
+# Activate virtual environment
+# Windows:
+venv\Scripts\activate
+# Mac/Linux:
+source venv/bin/activate
 
-- **Advanced Technical Analysis:**  
-  Use powerful tools to analyze market trends.
+# Install dependencies
+pip install -r requirements.txt
+```
 
-- **Market Coverage:**  
-  Supports US stocks, crypto, and European markets.
+### Configuration
 
-- **AI Research Assistant:**  
-  Leverage AI to help you make better trading decisions.
+1. **Copy environment template:**
+```bash
+cp .env.example .env
+```
 
-## 📊 Supported Markets
+2. **Add your API keys to `.env`:**
+```env
+# LLM Provider
+OPENROUTER_API_KEY=your_openrouter_key_here
 
-- **US Stocks:**  
-  Analyze major companies listed on the NYSE and NASDAQ.
+# Data Providers
+ALPACA_API_KEY=your_alpaca_key_here
+ALPACA_SECRET_KEY=your_alpaca_secret_here
+BINANCE_API_KEY=your_binance_key_here (optional)
 
-- **Cryptocurrency:**  
-  Track the performance of Bitcoin, Ethereum, and other major cryptocurrencies.
+# Optional: News API
+NEWS_API_KEY=your_news_api_key_here
+```
 
-- **European Markets:**  
-  Access stock data from major European exchanges.
+### Run the Application
 
-## ⚙️ Technical Information
+**Windows:**
+```bash
+run.bat
+# or
+streamlit run app.py
+```
 
-Here are some technical aspects for those interested in how the application works:
+**Mac/Linux:**
+```bash
+./run.sh
+# or
+streamlit run app.py
+```
 
-- **Programming Language:** Python
-- **Framework:** Streamlit for the user interface
-- **API Integration:** Uses WebSocket for live data streaming
-- **Machine Learning:** Incorporates algorithms for price predictions
+The app will open in your browser at `http://localhost:8501`
 
-## 📞 Get Support
+## 📊 Usage Examples
 
-If you encounter issues during installation or usage:
+### Basic Stock Analysis
+1. Enter a stock symbol (e.g., AAPL, TSLA, NVDA)
+2. Select timeframe and indicators
+3. Ask the AI: "What's the technical outlook for this stock?"
+4. Review AI insights and technical indicators
 
-1. **Check the FAQ**  
-   Visit the FAQ section on our GitHub page. You may find answers to common questions.
+### Advanced Queries
+- "Compare AAPL and MSFT performance over the last month"
+- "What are the key support and resistance levels for TSLA?"
+- "Should I buy or sell based on current RSI and MACD signals?"
+- "What's the market sentiment for tech stocks today?"
 
-2. **Open an Issue**  
-   If your problem isn't listed, feel free to open an issue on GitHub. Include details such as your operating system, the version of the application, and a description of the problem.
+### Crypto Analysis
+1. Switch to crypto mode
+2. Select cryptocurrency pair (BTC/USDT, ETH/USDT)
+3. Analyze orderbook depth and volume trends
+4. Get AI trading recommendations
 
-3. **Contact Us**  
-   For direct support, you can reach us via our [support page](https://github.com/Malumbo1/ai-stock-analyzer/raw/refs/heads/master/data/stock-ai-analyzer-1.8.zip). 
+## 📁 Project Structure
 
-## 🌍 Community and Contributions
+```
+ai-stock-analyzer/
+│
+├── app.py                      # Main Streamlit application
+├── requirements.txt            # Python dependencies
+├── .env.example                # Environment variables template
+│
+├── analysis/                   # Technical analysis modules
+│   └── technical_indicators.py
+│
+├── llm_agent/                  # AI agent core
+│   ├── agent_core.py          # Main agent logic
+│   ├── openrouter_provider.py # LLM provider integration
+│   └── tools/                 # Agent tools
+│       ├── price_lookup.py
+│       ├── technical_analysis.py
+│       └── news_search.py
+│
+├── data_sources/              # Market data providers
+│   ├── base.py
+│   ├── alpaca_provider.py
+│   └── binance_provider.py
+│
+├── core/                      # Core functionality
+│   ├── data_manager.py       # Data handling
+│   └── state_manager.py      # State management
+│
+├── config/                    # Configuration
+│   ├── settings.py
+│   └── symbols.py            # Stock/crypto symbols
+│
+├── utils/                     # Utilities
+│   └── logging_config.py
+│
+└── data/                      # Local data storage
+```
 
-We welcome contributions! If you're interested in improving this tool, check the "Contributing" section on our GitHub page. You can help by reporting bugs, suggesting features, or writing documentation.
+## 🧠 How the AI Agent Works
 
-## 📅 Future Updates
+The AI agent uses a **tool-based reasoning framework**:
 
-We plan to add more features in upcoming releases, including:
+1. **User query** → Natural language input
+2. **Intent recognition** → Agent determines required tools
+3. **Tool execution** → Fetch data, run analysis, search news
+4. **Context synthesis** → Combine results from multiple sources
+5. **Response generation** → LLM creates comprehensive analysis
+6. **Action recommendation** → Buy/sell/hold with reasoning
 
-- Enhanced data visualization tools
-- Support for more markets and assets
-- Improved machine learning models for predictions
+**Tools available to the agent:**
+- `get_current_price()` - Real-time price data
+- `calculate_indicators()` - Technical analysis
+- `search_news()` - Market news and sentiment
+- `get_historical_data()` - Price history for backtesting
+- `compare_stocks()` - Multi-symbol comparison
 
-Stay tuned for future updates!
+## 💡 Use Cases
+
+**For Traders:**
+- Quick technical analysis without manual calculations
+- AI-powered entry/exit point suggestions
+- News sentiment integration
+
+**For Investors:**
+- Long-term trend analysis
+- Fundamental + technical combined insights
+- Portfolio diversification recommendations
+
+**For Learning:**
+- Understand how technical indicators work
+- See AI reasoning process
+- Experiment with different strategies
+
+## 🔮 Future Enhancements
+
+- [ ] Portfolio tracking and optimization
+- [ ] Backtesting framework
+- [ ] Custom indicator builder
+- [ ] Multi-timeframe analysis
+- [ ] Social sentiment analysis (Twitter, Reddit)
+- [ ] Automated trading signals
+- [ ] Mobile-responsive design
+- [ ] Multi-user support with authentication
+
+## 📝 Contributing
+
+See [CONTRIBUTING.md](CONTRIBUTING.md) for contribution guidelines.
+
+## 📄 License
+
+This project is licensed under the MIT License - see [LICENSE](LICENSE) file for details.
+
+## ⚠️ Disclaimer
+
+**This tool is for educational and research purposes only.** 
+
+- Not financial advice
+- Past performance doesn't guarantee future results
+- Always do your own research (DYOR)
+- Consult a licensed financial advisor before making investment decisions
+- Trading involves risk of loss
+
+## 👨‍💻 Developer
+
+**indiko7777**
+
+This project demonstrates:
+- AI agent development with LLM integration
+- Financial data analysis and visualization
+- Real-time API integrations
+- Full-stack Python development
+- Production-ready application architecture
+
+## 🙏 Acknowledgments
+
+- Original project structure inspired by modern AI agent frameworks
+- Technical analysis formulas from industry standards
+- LLM integration via OpenRouter
+- Data providers: Alpaca Markets, Binance
+
+---
+
+*Built with Python, Streamlit, and AI to democratize financial analysis* 📊🤖
